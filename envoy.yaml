@@ -13,7 +13,7 @@ static_resources:
     - filters:
       - name: envoy.filters.network.mongo_proxy
         typed_config:
-          "@type": type.googleapis.com/envoy.config.filter.network.mongo_proxy.v2.MongoProxy
+          "@type": type.googleapis.com/envoy.extensions.filters.network.mongo_proxy.v3.MongoProxy
           stat_prefix: mongo_proxy00
           access_log: /tmp/mongo_stats00.log
           emit_dynamic_metadata: true
