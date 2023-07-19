@@ -21,7 +21,7 @@ static_resources:
               typed_config:
                 "@type": type.googleapis.com/envoy.extensions.access_loggers.file.v3.FileAccessLog
                 path: "/tmp/access0.log"
-                
+ 
   clusters:
   - name: mongos0
     connect_timeout: 0.25s
@@ -34,7 +34,7 @@ static_resources:
         - endpoint:
             address:
               socket_address:
-                address: clusterapp.7epn9.mongodb.net
+                address: mongodb+srv://src-user:KWBau2JazqvU8sPU@clusterapp.7epn9.mongodb.net
                 port_value: 27017
 
 admin:
