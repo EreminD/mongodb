@@ -1,4 +1,4 @@
-FROM mongo:3.5
+FROM mongo:latest
 
 RUN mkdir -p /data/db
 
