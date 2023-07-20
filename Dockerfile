@@ -3,7 +3,7 @@
 FROM node:18-alpine3.16
 
 # override some config defaults with values that will work better for docker
-ENV ME_CONFIG_MONGODB_URL="mongodb://mongo:27017" \
+ENV ME_CONFIG_MONGODB_URL="mongodb://mongo-fgt4.onrender.com:27017" \
     ME_CONFIG_MONGODB_ENABLE_ADMIN="true" \
     VCAP_APP_HOST="0.0.0.0"
 
