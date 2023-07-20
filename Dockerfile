@@ -15,6 +15,4 @@ EXPOSE 8081 27017
 # CMD ["usr/bin/mongod", "--smallfiles"]
 # CMD ["cat", "/etc/mongod.conf"]
 CMD ["ls", "/etc"]
-# CMD ["mongod", "--port 8081"]
 CMD ["mongod", "--help"]
-CMD ["mongod", "--net.port 8081"]
