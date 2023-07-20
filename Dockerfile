@@ -1,6 +1,15 @@
-FROM envoyproxy/envoy:dev-d3bb3e0d600002e2aa2919e9d11a00d77f3a0fd1
-COPY envoy.yaml /etc/envoy/envoy.yaml
+FROM ubuntu:latest
 
-EXPOSE 9901 9902 10000 27017
+RUN apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv 7F0CEB10
+RUN echo 'deb http://downloads-distro.mongodb.org/repo/ubuntu-upstart dist 10gen' | tee /etc/apt/sources.list.d/10gen.list
 
-RUN chmod go+r /etc/envoy/envoy.yaml
+RUN dpkg-divert --local --rename --add /sbin/initctl
+RUN ln -s /bin/true /sbin/initctl
+
+RUN apt-get update
+RUN apt-get install mongodb-10gen
+
+RUN mkdir -p /data/db
+
+EXPOSE 27017
+CMD ["usr/bin/mongod", "--smallfiles"]
