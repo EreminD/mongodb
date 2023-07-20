@@ -11,6 +11,6 @@ FROM mongo:4.2
 
 RUN mkdir -p /data/db
 
-EXPOSE 27017
+EXPOSE 8081 27017
 # CMD ["usr/bin/mongod", "--smallfiles"]
-CMD ["mongod"]
+CMD ["mongod", "--port 8081"]
