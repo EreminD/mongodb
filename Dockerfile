@@ -7,4 +7,4 @@ EXPOSE 8081 27017
 # CMD ["cat", "/etc/mongod.conf"]
 CMD ["ls", "/etc"]
 # CMD ["mongod --port 8081"]
-ENTRYPOINT ["mongod", "--port 8081"]
+ENTRYPOINT ["mongod", "--port", "8081"]
